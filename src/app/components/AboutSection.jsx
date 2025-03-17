@@ -9,12 +9,12 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
+        <li>Desarrollo Web Full Stack – Aplicaciones web personalizadas con tecnologías modernas.</li>
+        <li>Desarrollo Frontend – Interfaces intuitivas y responsivas con React y Redux.</li>
+        <li>Desarrollo Backend – Arquitecturas robustas con Node.js, Express y bases de datos SQL.</li>
+        <li>Integraciones y API – Conexión fluida entre sistemas con APIs seguras y eficientes.</li>
+        <li>Optimización y Mantenimiento – Mejora de rendimiento y soporte continuo.</li>
+        
       </ul>
     ),
   },
@@ -23,8 +23,7 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Instituto Tegnologico del Putumayo</li>
       </ul>
     ),
   },
@@ -33,9 +32,11 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
-      </ul>
+        <li>📌 Frontend: React, Redux, HTML, CSS</li>
+        <li>📌 Backend: Node.js, Express</li>
+        <li>📌 Bases de Datos: PostgreSQL, Sequelize</li>
+        <li>📌 Herramientas: Git, GitHub, Docker</li>
+       </ul>
     ),
   },
 ];
@@ -53,16 +54,16 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} />
+        <Image src="/images/codecode.png" width={500} height={500} />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">Sobre Nosotros</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+          Somos un equipo de desarrolladores full stack especializados en la creación de 
+          aplicaciones web interactivas, escalables y de alto rendimiento. Nuestro equipo
+          está compuesto por expertos en frontend y backend, con experiencia en tecnologías 
+          como JavaScript, React, Redux, Node.js, Express, PostgreSQL, Sequelize, HTML, CSS
+          y Git. Nos apasiona ofrecer soluciones tecnológicas innovadoras que optimicen la 
+          experiencia del usuario y mejoren la eficiencia de los negocios.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
@@ -70,21 +71,21 @@ const AboutSection = () => {
               active={tab === "skills"}
             >
               {" "}
-              Skills{" "}
+              Nuestros Servicios{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
               {" "}
-              Education{" "}
+              Educacion{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
               {" "}
-              Certifications{" "}
+              Experiencia{" "}
             </TabButton>
           </div>
           <div className="mt-8">
