@@ -9,11 +9,11 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Desarrollo Web Full Stack – Aplicaciones web personalizadas con tecnologías modernas.</li>
-        <li>Desarrollo Frontend – Interfaces intuitivas y responsivas con React y Redux.</li>
-        <li>Desarrollo Backend – Arquitecturas robustas con Node.js, Express y bases de datos SQL.</li>
-        <li>Integraciones y API – Conexión fluida entre sistemas con APIs seguras y eficientes.</li>
-        <li>Optimización y Mantenimiento – Mejora de rendimiento y soporte continuo.</li>
+        <li>Aplicaciones web personalizadas con tecnologías modernas.</li>
+        <li>Interfaces intuitivas y responsivas con React y Next.js. </li>
+        <li>Arquitecturas robustas con Node.js y bases de datos</li>
+        <li>Conexión fluida entre sistemas con APIs seguras y eficientes.</li>
+        <li>Mejora de rendimiento y soporte continuo.</li>
         
       </ul>
     ),
@@ -32,9 +32,9 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>📌 Frontend: React, Redux, HTML, CSS</li>
-        <li>📌 Backend: Node.js, Express</li>
-        <li>📌 Bases de Datos: PostgreSQL, Sequelize</li>
+        <li>📌 Frontend: React.js, Next.js, HTML, CSS, JavaScript, TypeScript, Astro</li>
+        <li>📌 Backend: Python(Django), Java Scrip (Node.js), PHP, TypeScript (Node.js)</li>
+        <li>📌 Bases de Datos: MySQL, SQL Server, MongoDB</li>
         <li>📌 Herramientas: Git, GitHub, Docker</li>
        </ul>
     ),
@@ -61,8 +61,8 @@ const AboutSection = () => {
           Somos un equipo de desarrolladores full stack especializados en la creación de 
           aplicaciones web interactivas, escalables y de alto rendimiento. Nuestro equipo
           está compuesto por expertos en frontend y backend, con experiencia en tecnologías 
-          como JavaScript, React, Redux, Node.js, Express, PostgreSQL, Sequelize, HTML, CSS
-          y Git. Nos apasiona ofrecer soluciones tecnológicas innovadoras que optimicen la 
+          como JavaScript, React, Node.js, HTML, CSS
+          y demas. Nos apasiona ofrecer soluciones tecnológicas innovadoras que optimicen la 
           experiencia del usuario y mejoren la eficiencia de los negocios.
           </p>
           <div className="flex flex-row justify-start mt-8">

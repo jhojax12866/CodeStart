@@ -18,15 +18,12 @@ const EmailSection = () => {
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
 
-    // Form the request for sending data to the server.
+    
     const options = {
-      // The method is POST because we are sending data.
       method: "POST",
-      // Tell the server we're sending JSON.
       headers: {
         "Content-Type": "application/json",
       },
-      // Body of the request is the JSON data we created above.
       body: JSONdata,
     };
 
@@ -51,7 +48,8 @@ const EmailSection = () => {
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {" "}
-          🚀 ¿Necesitas un equipo de desarrollo confiable y eficiente? Estamos listos para ayudarte. Escríbenos y cuéntanos sobre tu proyecto.
+          ¿Necesitas un equipo de desarrollo confiable y eficiente?
+          Estamos listos para ayudarte. Escríbenos y cuéntanos sobre tu proyecto.
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="https://github.com/jhojax12866">
