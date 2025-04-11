@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     service: "Gmail",
     auth: {
       user: "johanburbano2021@itp.edu.co",  
-      pass: "1124848674",         // CAMBIA ESTO (Usa una contraseña de aplicación en Gmail)
+      pass: "1124848674",         
     },
   });
 
