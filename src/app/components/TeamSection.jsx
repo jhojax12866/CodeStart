@@ -16,16 +16,16 @@ const teamMembers = [
   {
     id: 2,
     name: "Jhonier Pasos",
-    role: "Desarrolladora Backend",
-    languages: "Node.js, Express, MongoDB",
-    image: "/images/team/jp.png",
+    role: "Desarrollador Backend",
+    languages: "Nest.js, Django, MySql",
+    image: "/images/team/jhonier.jpg",
     github: "https://github.com/jhonierp",
   },
   {
     id: 3,
     name: "Camilo Vallejos",
-    role: "DevOps Engineer",
-    languages: "Docker, Kubernetes, AWS",
+    role: "Diseñador y Desarrollador",
+    languages: "React, Figma, Python",
     image: "/images/team/camilo.png",
     github: "https://github.com/Camilo138",
   },
@@ -41,15 +41,15 @@ const teamMembers = [
 
 const TeamSection = () => {
   return (
-    <section id="team" className="mt-12">
+    <section id="team" className="mt-12 px-4">
       <h2 className="text-center text-4xl font-bold text-white mb-8">
         Nuestro Equipo
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {teamMembers.map((member, index) => (
           <motion.div
             key={member.id}
-            className="bg-[#181818] rounded-xl shadow-lg p-6 text-center"
+            className="bg-[#181818] rounded-xl shadow-lg p-6 text-center flex flex-col items-center"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -57,8 +57,9 @@ const TeamSection = () => {
             <img
               src={member.image}
               alt={member.name}
-              className="w-32 h-32 mx-auto rounded-full mb-4"
+              className="w-60 h-60 mx-auto rounded-full object-cover"
             />
+
             <h3 className="text-xl font-semibold text-white">{member.name}</h3>
             <p className="text-[#ADB7BE]">{member.role}</p>
             <p className="text-sm text-[#ADB7BE]">{member.languages}</p>
