@@ -25,3 +25,29 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-container {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 30s linear infinite;
+}
+
+.carousel-container:hover .carousel-track {
+  animation-play-state: paused;
+}
+img {
+  width: 200px;
+  height: auto; 
+}
