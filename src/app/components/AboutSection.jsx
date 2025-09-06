@@ -24,6 +24,7 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>Instituto Tegnologico del Putumayo</li>
+        <li>Institucion Universitaria del Putumayo</li>
       </ul>
     ),
   },
