@@ -2,7 +2,6 @@
 import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
-import { motion, useInView } from "framer-motion";
 
 const projectsData = [
   {
@@ -12,7 +11,8 @@ const projectsData = [
     image: "/images/projects/distritiendamj.png",
     tag: ["Todos", "Web"],
     gitUrl: "https://github.com/jhojax12866/Frontend-Distritienda-MJ.git",
-    previewUrl: "https://demos.creative-tim.com/soft-ui-dashboard-pro-react/?_ga=2.55478946.860270220.1742786495-619823178.1742786495#/dashboards/default",
+    previewUrl:
+      "https://demos.creative-tim.com/soft-ui-dashboard-pro-react/?_ga=2.55478946.860270220.1742786495-619823178.1742786495#/dashboards/default",
   },
   {
     id: 2,
@@ -32,7 +32,6 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "/",
   },
-
   {
     id: 3,
     title: "React Tienda Rapicred",
@@ -42,50 +41,56 @@ const projectsData = [
     gitUrl: "https://github.com/jhojax12866/tiendaapp.git",
     previewUrl: "/",
   },
-  
   {
     id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
+    title: "Pagina web Teccel Mocoa",
+    description: "Landing y atencion al usuario",
+    image: "/images/projects/teccel2.png",
     tag: ["Todos", "Web"],
     gitUrl: "/",
-    previewUrl: "/",
+    previewUrl: "https://teccelmocoa.com",
   },
   {
     id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
+    title: "Web Distriluna",
+    description: "Menu de productos",
+    image: "/images/projects/distriluna.png",
     tag: ["Todos", "Web"],
     gitUrl: "/",
-    previewUrl: "/",
+    previewUrl: "https://menu-distriluna.vercel.app/",
+  },
+  {
+    id: 7,
+    title: "Vlsm Calculator",
+    description: "Calculadora de Sub-redes",
+    image: "/images/projects/vlsm.png",
+    tag: ["Todos", "Mobile"],
+    gitUrl: "/",
+    previewUrl: "https://v0-electron-vls-m-api.vercel.app/",
   },
 ];
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("Todos");
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+
+  // Filtramos proyectos según tag
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
+
+  // Duplicamos el array filtrado para el carrusel
+  const duplicatedProjects = [...filteredProjects, ...filteredProjects];
 
   const handleTagChange = (newTag) => {
     setTag(newTag);
   };
 
-  const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
-  );
-
-  const cardVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-  };
-
   return (
-    <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+    <section id="projects" className="py-12">
+      <h2 className="text-center text-4xl font-bold text-white mb-8">
         Nuestros Proyectos
       </h2>
+
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
@@ -103,26 +108,25 @@ const ProjectsSection = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-            />
-          </motion.li>
-        ))}
-      </ul>
+
+      <div className="carousel-container overflow-x-auto whitespace-nowrap px-4">
+        <div className="carousel-track inline-flex gap-6">
+          {duplicatedProjects.map((project, index) => (
+            <div
+              key={index}
+              className="min-w-[400px] max-w-[400px] h-[280px] mx-2 inline-block"
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
