@@ -51,14 +51,7 @@ const EmailSection = () => {
           ¿Necesitas un equipo de desarrollo confiable y eficiente?
           Estamos listos para ayudarte. Escríbenos y cuéntanos sobre tu proyecto.
         </p>
-        <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com/jhojax12866">
-            <Image src={GithubIcon} alt="Github Icon" />
-          </Link>
-          <Link href="linkedin.com">
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
-          </Link>
-        </div>
+        
       </div>
       <div>
         {emailSubmitted ? (
